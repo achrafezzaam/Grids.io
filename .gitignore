@@ -6,3 +6,4 @@ venv/
 
 # Ignoring the database file
 *.sqlite3
+migrations/
