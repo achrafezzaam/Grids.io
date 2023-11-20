@@ -3,3 +3,6 @@ __pycache__/
 
 # Ignoring the virtual environment directory
 venv/
+
+# Ignoring the database file
+*.sqlite3
