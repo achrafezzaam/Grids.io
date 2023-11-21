@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from gridsio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('grids/', views.grid_list),
+    path('add_grid/', views.add_grid),
 ]
