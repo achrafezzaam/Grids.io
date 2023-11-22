@@ -21,5 +21,13 @@ from gridsio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('grids/', views.grid_list),
+    path('grid/<int:id>', views.grid_info),
     path('add_grid/', views.add_grid),
+    path('update_grid/<int:id>', views.update_grid),
+    path('del_grid/<int:id>', views.del_grid),
+    path('components/', views.component_list),
+    path('component/<int:id>', views.component_info),
+    path('add_component/', views.add_component),
+    path('update_component/<int:id>', views.update_component),
+    path('del_component/<int:id>', views.del_component),
 ]
