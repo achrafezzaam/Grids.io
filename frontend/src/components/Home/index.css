@@ -1,0 +1,26 @@
+.hero {
+	height: 60vh;
+	background-image: url("../../assets/hero_img.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.sectn {
+	height: 8em;
+}
+
+.about {
+	min-height: 12em;
+}
+
+.about h4 {
+	display: inline;
+	color: orange;
+	border-bottom: 2px solid orange;
+	padding-bottom: 2px;
+}
+
+.about a {
+	display: block;
+	margin: 12px 0 6px 0;
+}
