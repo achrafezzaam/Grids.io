@@ -6,7 +6,12 @@
 }
 
 .sectn {
-	height: 8em;
+	height: 25em;
+}
+
+.sectn img {
+	height: 20em;
+	width: 50%;
 }
 
 .about {
