@@ -1,17 +1,21 @@
+''' Defining the Grid and Component API views '''
 from .models import Grid, Component
 from .serializers import GridSerializer, ComponentSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+
 @api_view(['GET'])
 def grid_list(request):
+    ''' Get all the Grids from database '''
     grids = Grid.objects.all()
     serializer = GridSerializer(grids, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def grid_info(request, id):
+    ''' Research for a specific grid by id '''
     try:
         grid = Grid.objects.get(pk=id)
     except Grid.DoesNotExist:
@@ -21,6 +25,7 @@ def grid_info(request, id):
 
 @api_view(['POST'])
 def add_grid(request):
+    ''' Create a new Grid '''
     serializer = GridSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -28,6 +33,7 @@ def add_grid(request):
 
 @api_view(['PUT'])
 def update_grid(request, id):
+    ''' Update a Grid by id '''
     try:
         grid = Grid.objects.get(pk=id)
     except Grid.DoesNotExist:
@@ -40,6 +46,7 @@ def update_grid(request, id):
 
 @api_view(['DELETE'])
 def del_grid(request, id):
+    ''' Delete a specified Grid '''
     try:
         grid = Grid.objects.get(pk=id)
     except Grid.DoesNotExist:
@@ -49,12 +56,14 @@ def del_grid(request, id):
 
 @api_view(['GET'])
 def component_list(request):
+    ''' Get all the Components from database '''
     components = Component.objects.all()
     serializer = ComponentSerializer(components, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def component_info(request, id):
+    ''' Research for a specific Component by id '''
     try:
         component = Component.objects.get(pk=id)
     except Component.DoesNotExist:
@@ -64,6 +73,7 @@ def component_info(request, id):
 
 @api_view(['POST'])
 def add_component(request):
+    ''' Create a new Component '''
     serializer = ComponentSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -71,6 +81,7 @@ def add_component(request):
 
 @api_view(['PUT'])
 def update_component(request, id):
+    ''' Update a Component by id '''
     try:
         component = Component.objects.get(pk=id)
     except Component.DoesNotExist:
@@ -83,6 +94,7 @@ def update_component(request, id):
 
 @api_view(['DELETE'])
 def del_component(request, id):
+    ''' Delete a specified Component '''
     try:
         component = Component.objects.get(pk=id)
     except Component.DoesNotExist:

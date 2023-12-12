@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'gridsio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gridsio_db',
-        'USER': 'achraf',
-        'PASSWORD': 'hunter x hunter',
+        'NAME': 'database_name',
+        'USER': 'database_username',
+        'PASSWORD': 'database_user_password',
         'HOST': 'localhost',  # or the hostname where your MySQL server is running
         'PORT': '3306',      # or the port on which your MySQL server is listening
     }
